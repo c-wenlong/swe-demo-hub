@@ -1,0 +1,17 @@
+{
+  "name": "starter",
+  "owner": {
+    "name": "Quiver demo hub"
+  },
+  "metadata": {
+    "description": "Sample marketplace from the Quiver demo hub. Rename it and add your own plugins."
+  },
+  "plugins": [
+    {
+      "name": "git-helpers",
+      "source": "./git-helpers",
+      "description": "Small git helpers, starting with a commit message writer.",
+      "version": "0.1.0"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+# Paths swe init leaves alone, one per line, relative to your home.
+# Same idea as .gitignore: blank lines and # comments are skipped, * is a
+# wildcard (and crosses /), and naming a directory covers everything in it.
+# An ignored path is reported as "ignored" and never linked or counted as
+# left alone, so a harness can keep its own skills and instructions.
+#
+#   .agents/skills          leave that one skills directory alone
+#   .agents                 leave the whole harness alone
+#   .config/*/AGENTS.md     every instruction file under ~/.config
+#   .claude/hooks/guard.py  one hook script

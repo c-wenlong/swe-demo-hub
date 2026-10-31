@@ -1,0 +1,8 @@
+{
+  "name": "git-helpers",
+  "version": "0.1.0",
+  "description": "Small git helpers, starting with a commit message writer.",
+  "author": {
+    "name": "Quiver demo hub"
+  }
+}

@@ -1,0 +1,3 @@
+# Hook scripts in this folder that swe init leaves unlinked, one per line.
+# `swe hooks enable <name>` removes a line, `swe hooks disable <name>` adds one.
+block-force-push.py
