@@ -1,10 +1,10 @@
 {
   "name": "starter",
   "owner": {
-    "name": "Quiver demo hub"
+    "name": "SWE demo hub"
   },
   "metadata": {
-    "description": "Sample marketplace from the Quiver demo hub. Rename it and add your own plugins."
+    "description": "Sample marketplace from the SWE demo hub. Rename it and add your own plugins."
   },
   "plugins": [
     {

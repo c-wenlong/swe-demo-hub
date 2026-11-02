@@ -1,7 +1,7 @@
-# Quiver demo hub
+# SWE demo hub
 
-A starter hub for [Quiver](https://github.com/c-wenlong/quiver). A hub is a git
-repository that Quiver clones as `~/.quiver` and shares with every coding
+A starter hub for [SWE](https://github.com/c-wenlong/swe). A hub is a git
+repository that SWE clones as `~/.swe` and shares with every coding
 agent on your machine: one `AGENTS.md`, one skills folder, your plugin
 marketplaces, hook scripts and MCP server list.
 
@@ -20,7 +20,7 @@ marketplaces, hook scripts and MCP server list.
    Do not point setup at this repo directly: you could not push your changes
    back to it.
 
-Setup clones your hub as `~/.quiver`, links `AGENTS.md` and `skills/` into
+Setup clones your hub as `~/.swe`, links `AGENTS.md` and `skills/` into
 each coding agent it finds, and registers the plugin marketplaces in
 `plugins/`. Run `swe init` any time to repair or refresh the links.
 
@@ -28,7 +28,8 @@ each coding agent it finds, and registers the plugin marketplaces in
 
 | Path | What it is |
 |---|---|
-| `AGENTS.md` | Instructions every agent reads. Linked into each harness as `CLAUDE.md`, `AGENTS.md`, `GEMINI.md` and so on. |
+| `AGENTS.md` | Instructions every agent reads. Linked into each harness as `CLAUDE.md`, `AGENTS.md`, `GEMINI.md` and so on. Generated from `AGENTS_MD/`. |
+| `AGENTS_MD/` | The chapters `AGENTS.md` is built from, in the order `index.txt` lists them. |
 | `skills/<name>/SKILL.md` | Shared skills, linked into every harness's skills folder. Three samples: `review-checklist`, `debug-systematically`, `write-pr-description`. |
 | `plugins/<marketplace>/` | Plugin marketplaces. Each has `.claude-plugin/marketplace.json` listing its plugins. The sample `starter` marketplace holds one plugin, `git-helpers`. |
 | `hooks/<harness>/` | Hook scripts, linked into that one harness only. The sample `hooks/claude/block-force-push.py` is off: `hooks/claude/.disabled` lists it. |
@@ -39,7 +40,10 @@ each coding agent it finds, and registers the plugin marketplaces in
 
 ## Make it yours
 
-- **Rewrite `AGENTS.md`** with the rules you want every agent to follow.
+- **Rewrite the chapters in `AGENTS_MD/`** with the rules you want every agent
+  to follow, then run `swe instructions build`. Add a chapter by listing its
+  file in `AGENTS_MD/index.txt`. To edit `AGENTS.md` by hand instead, delete
+  `AGENTS_MD/`.
 - **Skills:** delete the samples you do not want, and add a folder per skill
   with a `SKILL.md` (front matter `name` and `description`, then the
   instructions).
@@ -53,8 +57,9 @@ each coding agent it finds, and registers the plugin marketplaces in
   `swe mcp sync` writes each harness's config.
 - **Hooks:** `swe hooks enable block-force-push.py` links the sample, and
   you declare it in `~/.claude/settings.json` (its docstring shows how).
-- **Commit and push** from `~/.quiver` like any repo. On another machine,
-  `swe setup --hub=<your URL>` brings the same setup over.
+- **Sync:** `swe sync` commits your changes in `~/.swe`, merges the remote
+  and pushes. On another machine, `swe setup --hub=<your URL>` brings the
+  same setup over, and `swe sync` keeps the two in step after that.
 
 ## Sample MCP servers
 
