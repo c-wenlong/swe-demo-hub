@@ -1,0 +1,37 @@
+# Agent instructions
+
+Global instructions for every coding agent on this machine. SWE keeps this
+file at `~/.swe/AGENTS.md` and links it into each harness under that
+harness's own filename (`CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, ...), so one
+edit here changes all of them. Run `swe init --check` to see the links.
+
+This file is generated from the chapters in `~/.swe/AGENTS_MD/`, in the
+order `AGENTS_MD/index.txt` lists them. Edit a chapter, then run
+`swe instructions build`; edits made here directly are replaced.
+
+This is a starting point. Rewrite it to match how you work.
+
+## Before you change code
+
+- Read the project's own `AGENTS.md`, `CLAUDE.md` or `CONTRIBUTING.md` first.
+  Project rules win over this file.
+- Find how the project builds and tests before editing anything.
+- Ask when the request is ambiguous and a wrong guess would be expensive.
+  Otherwise pick the sensible default and say which one you picked.
+
+## While you work
+
+- Keep each change to one concern. Do not refactor code you were not asked
+  to touch.
+- Match the surrounding style, naming and error handling.
+- Never commit secrets. Credentials belong in environment variables or a
+  secrets manager, not in code, config files or commit messages.
+- Do not run destructive commands (force-push, `rm -rf`, dropping data,
+  rewriting history) without asking first.
+
+## Before you say it is done
+
+- Run the tests that cover your change, and the linter if the project has
+  one. Say what you ran and what passed.
+- If you could not verify something, say so plainly.
+- Commit only when asked. Never commit straight to the default branch.

@@ -6,7 +6,7 @@ Disabled by default. `hooks/claude/.disabled` lists this file, so
 
   1. Run `swe hooks enable block-force-push.py`, which removes its line
      from hooks/claude/.disabled and links it into ~/.claude/hooks.
-  2. Declare it in ~/.claude/settings.json. Quiver links the script but
+  2. Declare it in ~/.claude/settings.json. SWE links the script but
      never edits your settings:
 
      "hooks": {
